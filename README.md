@@ -1,7 +1,7 @@
 # MyDashCam
 ![mydashcam](https://github.com/VaAndCob/MyDashCam/blob/main/picture/screenshot1.jpg)
 
-## [Youtube](https://youtube.com/shorts/5TuPoKHzzyE)
+## [Youtube](https://youtube.com/shorts/5TuPoKHzzyE?feature=share)
 ## Features
 - Record 2MP picture and save to sdcard every 1 sec
 - Live view with app on android phone
