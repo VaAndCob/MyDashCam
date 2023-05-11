@@ -14,4 +14,4 @@
 
 ## Software
 - Arduino IDE
-- App Inventor AI2
+- ![App Inventor AI2](http://appinventor.mit.edu/)
