@@ -74,7 +74,7 @@ ledcAttachPin(4, config.ledc_channel);            // attach the GPIO pin to the 
 
 
 //Variable
-String res[25] = {"SQUARE-96X96","QQVGA-160x120","QCIF-176x144","HQVGA-240x176","SQUARE-240x240",
+const String res[25] = {"SQUARE-96X96","QQVGA-160x120","QCIF-176x144","HQVGA-240x176","SQUARE-240x240",
 "QVGA-320x420","CIF-400x296","HVGA-480x320","VGA-640x480","SVGA-800x600","XGA-1024x768","HD-1280x720",
 "SXGA-1280x1024","UXGA-1600x1200","FHD-1920x1080","P_HD-720x1280","P_3MP-867x1536","QXGA-2048x1536",
 "QHD-2560x1440","WQXGA-2560x1600","P_FHD-1080x1920","QSXGA-2560x1920","INVALID"};
@@ -99,8 +99,25 @@ u_short pictureNumber = 0;
 bool picNoSave = false;
 uint32_t entry;
 byte waitUploadCounter = 0;//counter to exist from update firmware mode
+const int8_t tempOffset = -20; //default cpu temperature offset = -20 (up to each Ai thinker board)
+/*to find the best offset: run and check reading temperature compare to room temperature
+the cold start cpu temperature reading should be equal or closer to room temperature
+tempOffset = room_temp - cpu_temp; for ex:  25 - 40 = - 15;
+cpu temperature read was higher than real temp for 15 c
+*/
 
-  
+
+/*--- Global function ---*/
+void checkCPUTemp(int8_t offset) {// a function to read CPU temp and shut down if over temperature
+    float temp = (temprature_sens_read() - 32) / 1.8 + offset; //read temperature + adjust to real temp read
+    Serial.print(temp,2);   //print Celsius temperature and tab
+    Serial.println("°C");
+    if (temp >= overtemp) {
+      ledcWrite(flashChannel, 8);
+      Serial.printf("Over temperature shutdown at %d°C\n",overtemp);
+      esp_deep_sleep_start();  //sleep shutdown
+    }   
+}    
 /*------------------*/
 void memoryCheck() {
   psramInit();
@@ -335,14 +352,8 @@ void loop() {
            }
       }//if updatefirmware
     }//else
-    float temp = (temprature_sens_read() - 32) / 1.8;
-    Serial.print(temp,2);   //print Celsius temperature and tab
-    Serial.println("°C");
-    if (temp >= overtemp) {
-      ledcWrite(flashChannel, 8);
-      Serial.printf("Over temperature shutdown at %d°C\n",overtemp);
-      esp_deep_sleep_start();  //sleep shutdown
-    } 
+    
+    checkCPUTemp(tempOffset);//you can skip this function in case you want to ignore CPU temp
   }//1 sec loop  
 
   if(digitalRead(RX) == LOW) {//RX pin low (push reset button)
