@@ -16,6 +16,6 @@ https://youtube.com/shorts/3SYbb51H01k?feature=share
 
 ## Software
 - Arduino IDE
-- ![App Inventor AI2](http://appinventor.mit.edu/)
+- [App Inventor AI2](http://appinventor.mit.edu/)
   
 ## [☕ Buy me coffee](https://www.buymeacoffee.com/vaandcob)
