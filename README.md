@@ -17,6 +17,5 @@ https://youtube.com/shorts/3SYbb51H01k?feature=share
 ## Software
 - Arduino IDE
 - ![App Inventor AI2](http://appinventor.mit.edu/)
-
-## License and Credits
-Developed by Ratthanin W (2023)
+  
+## [Buy me coffee](https://www.buymeacoffee.com/vaandcob)
