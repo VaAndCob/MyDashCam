@@ -1,6 +1,6 @@
 # MyDashCam
 
-[Youtube](https://youtube.com/shorts/3SYbb51H01k?feature=share)
+https://youtube.com/shorts/3SYbb51H01k?feature=share
 
 ![mydashcam](https://github.com/VaAndCob/MyDashCam/blob/main/picture/screenshot1.jpg)
 ![ESP32cam](https://github.com/VaAndCob/MyDashCam/blob/main/picture/ESP32-Cam.jpg)
