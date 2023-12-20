@@ -15,3 +15,6 @@
 ## Software
 - Arduino IDE
 - ![App Inventor AI2](http://appinventor.mit.edu/)
+
+## License and Credits
+Developed by Ratthanin W (2023)
