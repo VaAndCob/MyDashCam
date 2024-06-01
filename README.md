@@ -10,14 +10,14 @@ https://youtube.com/shorts/3SYbb51H01k?feature=share
 ## Features
 - Record 2MP picture and save to sdcard every 1 sec
 - Live view with app on android phone
-- Overlay color/ WiFi/ Firmware update over app.
+- Overlay color/ WiFi/ Firmware update over the app.
 
 ## Hardware
 - ESP32-Cam module + shield
 - Android phone
 
 ## Software
-- Arduino IDE
+- Arduino IDE 2.x
 - [App Inventor AI2](http://appinventor.mit.edu/)
   
 ## [☕ Buy me coffee](https://www.buymeacoffee.com/vaandcob)
